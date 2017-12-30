@@ -8,14 +8,9 @@ import com.squareup.picasso.Picasso
 /**
  * Created by muhammadchehab on 12/30/17.
  */
-class MyImageView : AppCompatImageView {
+class MyImageView(context: Context, attrs: AttributeSet) : AppCompatImageView(context, attrs) {
 
-    var url: String = ""
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs){
-        val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.MyImageView,
-                0, 0)
-        url = typedArray.getString(R.styleable.MyImageView_imageURL)
+    fun setImageURL(url: String){
         Picasso.with(context).load(url).into(this)
     }
 }
