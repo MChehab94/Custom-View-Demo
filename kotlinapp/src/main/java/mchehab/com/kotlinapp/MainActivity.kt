@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val person = Person("Mohamad", "Chehab", "https://www.w3schools.om/w3css/img_lights.jpg",
+        val person = Person("Mohamad", "Chehab", "https://www.w3schools.com/w3css/img_lights.jpg",
                 23)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.setPerson(person)
+        binding.person = person
     }
 }
